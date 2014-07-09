@@ -28,7 +28,7 @@
 		      hy-mode main-line maxframe nrepl 
 		      clojure-mode epl popup rainbow-delimiters 
 		      smex undo-tree flycheck flycheck-hdevtools 
-		      kibit-mode paredit auto-indent-mode))
+		      kibit-mode paredit auto-indent-mode midje-mode))
 
 ;;;; Install my-packages as necessary
 (let ((uninstalled-packages (filter (lambda (x) (not (package-installed-p x))) my-packages)))
@@ -193,9 +193,38 @@
 
 
 (when window-system 
-  (load-theme 'deeper-blue t))
+  (load-theme 'monokai t))
+
+(require 'whitespace)
+(setq whitespace-line-column 80) ;; limit line length
+(setq whitespace-style '(face lines-tail))
+
+(add-hook 'prog-mode-hook 'whitespace-mode)
 
 (provide 'init)
 (require 'evil)
 (evil-mode 1)
 ;;; init.el ends here
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(haskell-mode-hook (quote (capitalized-words-mode imenu-add-menubar-index turn-on-eldoc-mode turn-on-haskell-decl-scan turn-on-haskell-doc turn-on-haskell-indent turn-on-haskell-indentation turn-on-haskell-simple-indent))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+;; Clojure-mode
+(require 'clojure-mode)
+(add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))
+;; Midje-mode
+(require 'midje-mode)
+(add-hook 'clojure-mode-hook 'midje-mode)
+
+(let* ((ruby-files '(".rake" ".thor" "Gemfile" "Rakefile" "Crushfile" "Capfile"))
+       (ruby-regexp (concat (regexp-opt ruby-files t) "\\'")))
+  (add-to-list 'auto-mode-alist (cons ruby-regexp 'ruby-mode)))
