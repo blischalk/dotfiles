@@ -28,7 +28,8 @@
 		      hy-mode main-line maxframe nrepl 
 		      clojure-mode epl popup rainbow-delimiters 
 		      smex undo-tree flycheck flycheck-hdevtools 
-		      kibit-mode paredit auto-indent-mode midje-mode))
+		      kibit-mode paredit auto-indent-mode midje-mode
+          dirtree))
 
 ;;;; Install my-packages as necessary
 (let ((uninstalled-packages (filter (lambda (x) (not (package-installed-p x))) my-packages)))
@@ -195,6 +196,7 @@
 (when window-system 
   (load-theme 'monokai t))
 
+;; Highlight lines longer than 80 chars
 (require 'whitespace)
 (setq whitespace-line-column 80) ;; limit line length
 (setq whitespace-style '(face lines-tail))
@@ -228,3 +230,11 @@
 (let* ((ruby-files '(".rake" ".thor" "Gemfile" "Rakefile" "Crushfile" "Capfile"))
        (ruby-regexp (concat (regexp-opt ruby-files t) "\\'")))
   (add-to-list 'auto-mode-alist (cons ruby-regexp 'ruby-mode)))
+
+
+;; Show trailing whitespace
+(setq-default show-trailing-whitespace t)
+(ido-mode 1)
+
+;; Enable Dirtree
+(require 'dirtree)
