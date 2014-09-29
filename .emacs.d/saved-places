@@ -1,9 +1,0 @@
-;;; -*- coding: utf-8 -*-
-(("/home/blischalk/.emacs.d/elpa/archives/MELPA/archive-contents" . 273295)
- ("/home/blischalk/.emacs.d/elpa/archives/gnu/archive-contents" . 12363)
- ("/home/blischalk/.emacs.d/elpa/archives/marmalade/archive-contents" . 83905)
- ("/home/blischalk/.emacs.d/elpa/evil-20140411.49/evil-autoloads.el" . 601)
- ("/home/blischalk/.emacs.d/elpa/goto-chg-20131228.1459/goto-chg-autoloads.el" . 1936)
- ("/home/blischalk/.emacs.d/elpa/monokai-theme-20140310.1330/monokai-theme-autoloads.el" . 494)
- ("/home/blischalk/.emacs.d/init.el" . 7048)
- ("/home/blischalk/clojure/test-app/project.clj" . 269))
