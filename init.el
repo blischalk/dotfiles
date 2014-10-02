@@ -18,15 +18,15 @@
 
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/") t)
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (add-to-list 'package-archives
 	     '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
 
 (defvar my-packages)
 (setq my-packages
-      '(auto-complete autopair cider color-theme zenburn-theme
-		      goto-last-change haskell-mode
+      '(auto-complete autopair cider color-theme zenburn-theme monokai-theme
+		      goto-last-change haskell-mode evil key-chord midje-mode idomenu
 		      hy-mode main-line maxframe nrepl 
 		      clojure-mode epl popup rainbow-delimiters 
 		      smex undo-tree flycheck flycheck-hdevtools 
@@ -235,8 +235,8 @@
 (add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))
 (require 'midje-mode)
 (add-hook 'clojure-mode-hook 'midje-mode)
-(require 'dirtree)
 (setq tab-width 2)
 (setq js-indent-level 2)
+(ido-mode 1)
 (set-face-attribute 'default nil :height 200)
 ;;; init.el ends here
