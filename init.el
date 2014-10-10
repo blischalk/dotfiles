@@ -239,4 +239,17 @@
 (setq js-indent-level 2)
 (ido-mode 1)
 (set-face-attribute 'default nil :height 200)
+
+;; Haskell mode with evil mode
+(add-hook 'haskell-mode-hook 'haskell-indent-mode)
+(defun evil-open-below (count)
+  "Insert a new line below point and switch to Insert state.
+The insertion will be repeated COUNT times."
+  (interactive "p")
+  (evil-insert-newline-below)
+  (setq evil-insert-count count
+        evil-insert-lines t
+        evil-insert-vcount nil)
+  (evil-insert-state 1)
+  (add-hook 'post-command-hook #'evil-maybe-remove-spaces))
 ;;; init.el ends here
