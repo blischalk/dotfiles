@@ -21,7 +21,7 @@
 ;;
 ;; (require 'yaml-mode)
 ;; (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-;; 
+;;
 ;; Adding this code will make Emacs enter yaml mode whenever you open
 ;; a .yml file
 (add-to-list 'load-path "~/.emacs.d/vendor")
@@ -95,3 +95,8 @@ The insertion will be repeated COUNT times."
 (require 'whitespace)
 (setq whitespace-style '(face empty tabs lines-tail trailing))
 (global-whitespace-mode t)
+
+;; Helm
+;;(require 'helm-config)
+;;(global-set-key (kbd "C-c h") 'helm-mini)
+;;(helm-mode 1)
