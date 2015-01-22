@@ -252,4 +252,10 @@ The insertion will be repeated COUNT times."
         evil-insert-vcount nil)
   (evil-insert-state 1)
   (add-hook 'post-command-hook #'evil-maybe-remove-spaces))
-;;; init.el ends here
+
+;;; Markdown mode settings
+(autoload 'markdown-mode "markdown-mode"
+  "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
