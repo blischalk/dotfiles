@@ -1,10 +1,20 @@
-#export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[37m\]\h:\[\033[32;1m\]\w\[\033[m\] λ \[\033[m\]"
-#export PS1="[\W] λ "
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[36m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
 export CLICOLOR=1
-export LSCOLORS=ExFxBxDxCxegedabagacad
-alias ls='ls -GFh'
-source ~/.profile
-PATH=/usr/local/bin:$PATH
+export LSCOLORS=gxFxBxDxCxegedabagacad
+export HISTFILESIZE=160000
+export HISTSIZE=$HISTFILESIZE
+export EDITOR='/usr/bin/vim'
+export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/.cabal/bin
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+alias gdc="git diff --cached"
+alias ga="git add"
+alias gp="git pull"
+alias gb="git branch"
+alias gc="git commit"
+alias gs="git status"
+alias gd="git diff"
+alias gl="git l"
+alias gt="git tag"
+
+set -o vi
