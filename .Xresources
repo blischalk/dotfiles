@@ -1,0 +1,2 @@
+URxvt.perl-ext-common: font-size
+URxvt.keysym.C-slash:  font-size:show
